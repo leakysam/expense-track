@@ -1,10 +1,15 @@
+import { SpeechProvider } from "@speechly/react-client";
+import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { Provider } from "./context/context";
 import "./index.css";
 ReactDOM.render(
-  <Provider>
-    <App />
-  </Provider>,
+  <SpeechProvider appid="2598c1bb-2524-4e10-92b4-e0de28968331" language="en-US">
+    <Provider>
+      <App />
+    </Provider>
+  </SpeechProvider>,
+
   document.getElementById("root")
 );
