@@ -12,6 +12,8 @@ import { Delete, MoneyOff } from "@material-ui/icons";
 import React, { useContext } from "react";
 import { ExpenseTrackerContext } from "../../../context/context";
 import useStyles from "./styles";
+
+
 const List = () => {
   const classes = useStyles();
   const { deleteTransaction, transactions } = useContext(ExpenseTrackerContext);
