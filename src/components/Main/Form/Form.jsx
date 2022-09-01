@@ -28,10 +28,10 @@ const initialState = {
 };
 const Form = () => {
   const classes = useStyles();
-  const [formData, setFormData] = useState(initialState);
   const { addTransaction } = useContext(ExpenseTrackerContext);
+  const [formData, setFormData] = useState(initialState);
   const { segment } = useSpeechContext();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = React.useState(false);
 
   const createTransaction = () => {
     if (Number.isNaN(Number(formData.amount)) || !formData.date.includes("-"))
@@ -99,7 +99,7 @@ const Form = () => {
         createTransaction();
       }
     }
-  }, [segment]);
+  }, [segment,formData,createTransaction]);
 
   const selectedCategories =
     formData.type === "Income" ? incomeCategories : expenseCategories;
